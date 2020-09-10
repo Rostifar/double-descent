@@ -1,0 +1,14 @@
+1. CIFAR-10 w/ Resnet18
+    [] No label noise (w/ Adam LR=0.0001; 4k epochs; data augmentation)
+    [] label noise at various levels
+    [] epoch-wise double descent (k=3, 12, 64); 20% noise; epochs=[1, 10, 100, 500, 1000]
+
+
+Data Augmentation:
+    - RandomCrop(32, padding=4)
+    - RandomHorizontalFlip
+    * Noisy labels given same label
+
+Batch Size: 128 (this might have to be reduced)
+
+Noise: [0, 5, 10, 15, 20]
