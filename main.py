@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 import datetime
 import argparse
+import sys
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-config", "--config", help="run config file", type=str)
@@ -37,11 +38,13 @@ def noise_val(noise_str):
     i = int(noise_str)
     return float(i / 100)
 
+
 def num_classes(dataset):
     if dataset == 'cifar10':
         return 10
     if dataset == 'cifar100':
         return 100
+
 
 def load_dataset(dataset, train, transforms=None, noise=None):
     if dataset == 'cifar10':
@@ -240,8 +243,9 @@ def run(config):
 
 
 if __name__ == '__main__':
-    args = parser.parse_args()
+    args = sys.argv[1:]
+    options = parser.parse_args(args)
 
-    with open(args['config'], 'r') as f:
+    with open(options.config, 'r') as f:
         config = json.load(f)
         run(config)
