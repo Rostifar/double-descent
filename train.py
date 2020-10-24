@@ -7,7 +7,8 @@ import torchvision.transforms as transforms
 
 import models.resnet18k as resnet
 
-from torch.utils.tensorboard import SummaryWriter
+
+
 
 
 #k = [1, 2, 4, 8, 10, 20, 30, 50, 60, 64]
@@ -62,6 +63,7 @@ for epoch in range(10):
 
         pred = model(inputs)
         loss = criterion(pred, labels)
+        loss.backward()
         optimizer.step()
 
         running_loss += loss.item()

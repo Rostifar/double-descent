@@ -1,0 +1,10 @@
+TODO:
+
+[] Setup experiment parsing
+[] Verify integrity of noisy datasets
+[] Ensure that experiment results are correctly written out.
+
+
+Implementation:
+[] Model saving
+[] Split training and testing

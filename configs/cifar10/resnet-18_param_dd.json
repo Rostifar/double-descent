@@ -1,0 +1,14 @@
+{
+  "target": "param-dd",
+  "dataset": "cifar10",
+  "epochs": 4000,
+  "model": "renset-18",
+  "pretrained": false,
+  "init_lr":  0.0001,
+  "optimizer": "adam",
+  "use_gpu": true,
+  "gpu_num": 0,
+  "vals": [1, 2, 4, 8, 10, 20, 30, 50, 60, 64],
+  "data_aug": true,
+  "noise": 0.0
+}

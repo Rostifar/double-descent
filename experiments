@@ -3,6 +3,11 @@
     [] label noise at various levels
     [] epoch-wise double descent (k=3, 12, 64); 20% noise; epochs=[1, 10, 100, 500, 1000]
 
+2. CIFAR-10 w/ CNN
+    [] No label noise (w/ Adam LR=0.0001; 4k epochs; data augmentation)
+    [] Labek noise at
+
+
 
 Data Augmentation:
     - RandomCrop(32, padding=4)
@@ -12,3 +17,22 @@ Data Augmentation:
 Batch Size: 128 (this might have to be reduced)
 
 Noise: [0, 5, 10, 15, 20]
+
+
+
+------
+
+Priority experiment:
+- Model-wise double descent: 1, 4, 5, 8, 10, 15, 20, 25, 30, 40, 50, 60, 64
+- Data augmentation: on
+- Label noise: 0, 10, 15, 20
+- Epochs: 400
+- Resnet-18 (After this, repeat with CNN)
+
+
+
+TODO:
+[] Resnet priority
+[] CNN priority
+[] Add noiseless dataset
+[] Generalized experiment parser
